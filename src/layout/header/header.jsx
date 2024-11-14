@@ -9,10 +9,10 @@ export const Header = () => {
     const debounce = useDebounce(input);
     const { data, isLoading } = useGetSearch(debounce)
     return (
-        <header>
+        <header className="bg-[pink] py-[20px] fixed top-0 left-0 w-full z-50">
             <Container>
                 <Stack p={"30px"} position={"relative"}>
-                    <TextField sx={{ width: '400px', bgcolor: "#fff" }} placeholder="Search" value={input} onChange={(e) => setinput(e.target.value)} />
+                    <TextField  sx={{ width: '400px', bgcolor: "#fff", borderRadius:"10px" }} placeholder="Search" value={input} onChange={(e) => setinput(e.target.value)} />
                     {!isLoading && <Stack boxShadow={"0px 0px 99px -9px rgba(161,137,161,1)"}>
                         {data.map((item) => <Stack direction={"row"} alignItems={"center"} p="20px" border={"1px solid grey"} key={item.id}>
                             <img style={{ width: "150px" }} src={item.image} />

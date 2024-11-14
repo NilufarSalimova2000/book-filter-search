@@ -19,9 +19,9 @@ export const Home = () => {
         : data?.filter((item) => selectedGenres.includes(item.genre));
 
     return (
-        <main>
+        <main style={{ paddingTop: "140px" }}>
             <Stack direction={"row"} >
-                <Box width={"300px"} height={"auto"} p={"20px"}>
+                <Box borderRight={"2px solid pink"}  width={"300px"} height={"auto"} p={"20px"}>
                     <Box position={"fixed"}>
                         <FormGroup>
                             <FormControlLabel
@@ -57,7 +57,7 @@ export const Home = () => {
                 </Box>
                 <Box py={"50px"}>
                     <Container>
-                        <Stack direction={"row"} flexWrap={"wrap"} gap={"20px"}>
+                        <Stack justifyContent={"center"} direction={"row"} flexWrap={"wrap"} gap={"20px"}>
                             {isLoading ?
                                 (<Typography>Loading...</Typography>) : (
                                     filteredData.map((item) => (
